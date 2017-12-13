@@ -3,7 +3,9 @@
 
 #include "ensitlm.h"
 
-#define ROM_SIZE (320 * 240 / 2)
+#define VIDEO_W 320
+#define VIDEO_H 240
+#define ROM_SIZE (VIDEO_W * VIDEO_H / 2)
 
 struct ROM : public sc_core::sc_module {
 	ensitlm::target_socket<ROM> socket;

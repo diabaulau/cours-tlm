@@ -5,4 +5,6 @@
 #define LCDC_START_REG 0x04
 #define LCDC_INT_REG 0x08
 
+#define START_VALUE 1
+
 #endif // LCDC_REGISTER_MAP_H

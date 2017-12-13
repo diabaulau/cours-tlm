@@ -5,6 +5,7 @@
 #include "LCDC.h"
 #include "LCDC_registermap.h"
 #include "ensitlm.h"
+#include <unistd.h>
 
 using namespace std;
 using namespace sc_core;
@@ -158,6 +159,12 @@ tlm::tlm_response_status LCDC::write(const ensitlm::addr_t &a,
 	case LCDC_ADDR_REG:
 		addr_register = d;
 		break;
+	case LCDC_START_REG:
+		if(d == START_VALUE) {
+			started = true;
+			start_event.notify();
+		}
+		break;
 	case LCDC_INT_REG:
 		int_register = d;
 		if (int_register == 0)
@@ -181,6 +188,7 @@ void LCDC::compute() {
 
 	while (true) {
 		wait(period);
+		usleep(100000*period.to_seconds());
 
 		fill_buffer();
 		draw();

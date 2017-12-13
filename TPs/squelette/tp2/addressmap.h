@@ -1,0 +1,13 @@
+#ifndef _ADDRESSMAP_H_
+#define _ADDRESSMAP_H_
+
+#define TOTAL_MEMORY_SIZE   0x15400
+
+#define VIDEO_MEMORY_SIZE   76800
+#define LCDC_REGISTER_SIZE  12
+
+#define VIDEO_ADDR_START    0x10000000
+#define LCDC_ADDR_START     0x20000000
+#define ROM_ADDR_START      0x40000000
+
+#endif
