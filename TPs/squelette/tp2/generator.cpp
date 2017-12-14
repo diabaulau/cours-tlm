@@ -68,7 +68,7 @@ int Generator::animated_line_addr(int original_index) {
 	while (result >= VIDEO_MEMORY_SIZE) {
 		result -= VIDEO_MEMORY_SIZE;
 	}
-   	while (result < 0) {
+	while (result < 0) {
 		result += VIDEO_MEMORY_SIZE;
 	}
 
